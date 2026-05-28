@@ -13,71 +13,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: {
-              900: '#0a0a0f',
-              800: '#12121a',
-              700: '#1a1a25',
-              600: '#252532',
-              500: '#32324a',
-            },
-            accent: {
-              500: '#6366f1',
-              400: '#818cf8',
-              600: '#4f46e5',
-            },
-            cyan: {
-              500: '#06b6d4',
-              400: '#22d3ee',
-            }
-          },
-        },
-      }
-    }
-  </script>
-  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background-color: #0a0a0f;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-    
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: #12121a;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: #32324a;
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4a4a6a;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #12121a; }
+    ::-webkit-scrollbar-thumb { background: #32324a; border-radius: 4px; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
@@ -85,52 +28,19 @@
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500 to-cyan-500 flex items-center justify-center">
             <i class="fa-solid fa-sparkles text-white text-lg"></i>
           </div>
-          <div>
-            <a href="index-standalone.html" class="text-xl font-bold bg-gradient-to-r from-accent-400 to-cyan-400 bg-clip-text text-transparent">
-              AI工具导航
-            </a>
-            <p class="text-xs text-gray-500 hidden sm:block">发现最好用的AI工具</p>
-          </div>
+          <a href="index-standalone.html" class="text-xl font-bold bg-gradient-to-r from-accent-400 to-cyan-400 bg-clip-text text-transparent">AI工具导航</a>
         </div>
-
-        <div class="hidden md:flex items-center flex-1 max-w-xl mx-8">
-          <div class="relative w-full">
-            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"></i>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="搜索文章..."
-              class="w-full bg-dark-700 border border-dark-600 rounded-xl pl-10 pr-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 transition-colors"
-            />
-          </div>
-        </div>
-
         <nav class="hidden md:flex items-center gap-6">
           <a href="index-standalone.html#tools" class="text-gray-300 hover:text-white transition-colors">工具库</a>
           <a href="index-standalone.html#categories" class="text-gray-300 hover:text-white transition-colors">分类</a>
           <a href="blog.html" class="text-accent-400 font-medium">博客</a>
           <a href="index-standalone.html#about" class="text-gray-300 hover:text-white transition-colors">关于</a>
         </nav>
-
-        <button
-          id="mobileMenuBtn"
-          class="md:hidden p-2 text-gray-300 hover:text-white"
-        >
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-300 hover:text-white">
           <i class="fa-solid fa-bars text-xl"></i>
         </button>
       </div>
-
-      <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden py-4 border-t border-dark-600 hidden">
-        <div class="relative mb-4">
-          <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"></i>
-          <input
-            type="text"
-            id="mobileSearchInput"
-            placeholder="搜索文章..."
-            class="w-full bg-dark-700 border border-dark-600 rounded-xl pl-10 pr-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500"
-          />
-        </div>
         <nav class="flex flex-col gap-3">
           <a href="index-standalone.html#tools" class="text-gray-300 hover:text-white transition-colors">工具库</a>
           <a href="index-standalone.html#categories" class="text-gray-300 hover:text-white transition-colors">分类</a>
@@ -141,9 +51,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="pt-16">
-    <!-- Hero Section -->
     <section class="bg-gradient-to-b from-dark-800 to-dark-900 py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -153,59 +61,205 @@
       </div>
     </section>
 
-    <!-- Blog Content -->
     <section class="py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Main Content -->
           <div class="flex-1">
-            <!-- Category Filters -->
             <div class="flex flex-wrap items-center gap-2 mb-8">
-              <button
-                data-category="all"
-                class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-accent-500 to-accent-600 text-white"
-              >
-                全部文章
-              </button>
-              <button
-                data-category="tutorial"
-                class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors"
-              >
-                使用教程
-              </button>
-              <button
-                data-category="review"
-                class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors"
-              >
-                工具评测
-              </button>
-              <button
-                data-category="news"
-                class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors"
-              >
-                行业动态
-              </button>
-              <button
-                data-category="tips"
-                class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors"
-              >
-                实用技巧
-              </button>
+              <button data-category="all" class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-accent-500 to-accent-600 text-white">全部文章</button>
+              <button data-category="tutorial" class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors">使用教程</button>
+              <button data-category="review" class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors">工具评测</button>
+              <button data-category="news" class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors">行业动态</button>
+              <button data-category="tips" class="category-btn px-4 py-2 rounded-xl text-sm font-medium bg-dark-700 text-gray-400 hover:bg-dark-600 hover:text-white transition-colors">实用技巧</button>
             </div>
 
-            <!-- Blog Posts Grid -->
             <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Blog posts will be inserted here -->
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="ChatGPT使用技巧" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">实用技巧</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/chatgpt-tips.html">ChatGPT使用技巧：10个提升效率的提示词</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">掌握这些提示词技巧，让ChatGPT成为您最强大的AI助手，提升工作和学习效率。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-15</span>
+                      <span>8分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">ChatGPT</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">提示词</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">效率</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1678836821375-41a51e0a5b57?w=600&h=400&fit=crop" alt="MidJourney教程" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">使用教程</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/midjourney-guide.html">MidJourney入门指南：从零开始创作AI艺术</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">本指南将帮助您从零开始学习MidJourney，掌握AI绘画的基本技巧和创作思路。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-12</span>
+                      <span>12分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">MidJourney</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">AI绘画</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">教程</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop" alt="AI编程工具" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">工具评测</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/ai-code-tools.html">AI编程工具推荐：提升开发效率的5个神器</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">推荐5款最实用的AI编程工具，帮助开发者提升编码效率，减少重复劳动。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-10</span>
+                      <span>6分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">AI编程</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">GitHub Copilot</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">效率</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=400&fit=crop" alt="AI写作工具" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">工具评测</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/ai-writing-tools.html">AI写作工具对比：哪个最适合您？</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">详细对比市面上主流AI写作工具，帮助您选择最适合自己的写作助手。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-08</span>
+                      <span>10分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">AI写作</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">Grammarly</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">QuillBot</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop" alt="AI视频工具" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">工具评测</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/ai-video-tools.html">AI视频生成工具推荐：Runway vs Pika</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">对比两款热门AI视频生成工具，看看哪个更适合您的创作需求。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-05</span>
+                      <span>7分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">AI视频</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">Runway</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">Pika</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1677525793000-9a2541450365?w=600&h=400&fit=crop" alt="AI趋势" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">行业动态</span>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
+                    <a href="blog/ai-news-2024.html">2024年AI行业展望：值得关注的5大趋势</a>
+                  </h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">展望2024年AI行业发展趋势，了解最新技术动态和投资方向。</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=AI工具导航" alt="AI工具导航" class="w-6 h-6 rounded-full bg-dark-600" />
+                      <span class="text-sm text-gray-400">AI工具导航</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span>2024-01-01</span>
+                      <span>5分钟</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">AI趋势</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">2024</span>
+                    <span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">行业分析</span>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
-          <!-- Sidebar -->
           <div class="lg:w-80">
-            <!-- Popular Posts -->
             <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 mb-6">
               <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-fire w-5 h-5 text-orange-500"></i>
-                热门文章
+                <i class="fa-solid fa-fire w-5 h-5 text-orange-500"></i>热门文章
               </h3>
               <ul class="space-y-3">
                 <li>
@@ -218,7 +272,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="group flex items-start gap-3">
+                  <a href="blog/midjourney-guide.html" class="group flex items-start gap-3">
                     <span class="flex-shrink-0 w-6 h-6 rounded-md bg-accent-500/20 flex items-center justify-center text-accent-400 text-xs font-medium">2</span>
                     <div>
                       <p class="text-sm text-gray-300 group-hover:text-white transition-colors line-clamp-2">MidJourney入门指南：从零开始创作AI艺术</p>
@@ -227,7 +281,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="group flex items-start gap-3">
+                  <a href="blog/ai-code-tools.html" class="group flex items-start gap-3">
                     <span class="flex-shrink-0 w-6 h-6 rounded-md bg-accent-500/20 flex items-center justify-center text-accent-400 text-xs font-medium">3</span>
                     <div>
                       <p class="text-sm text-gray-300 group-hover:text-white transition-colors line-clamp-2">AI编程工具推荐：提升开发效率的5个神器</p>
@@ -238,11 +292,9 @@
               </ul>
             </div>
 
-            <!-- Tags -->
             <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 mb-6">
               <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-tags w-5 h-5 text-cyan-500"></i>
-                热门标签
+                <i class="fa-solid fa-tags w-5 h-5 text-cyan-500"></i>热门标签
               </h3>
               <div class="flex flex-wrap gap-2">
                 <a href="#" class="px-3 py-1.5 bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white text-sm rounded-full transition-colors">ChatGPT</a>
@@ -254,19 +306,12 @@
               </div>
             </div>
 
-            <!-- Newsletter -->
             <div class="bg-gradient-to-br from-accent-600/20 to-cyan-500/20 border border-accent-500/30 rounded-2xl p-6">
               <h3 class="text-lg font-semibold text-white mb-2">订阅我们</h3>
               <p class="text-gray-400 text-sm mb-4">获取最新AI资讯和教程</p>
               <div class="space-y-3">
-                <input
-                  type="email"
-                  placeholder="输入邮箱地址"
-                  class="w-full bg-dark-700/50 border border-dark-600 rounded-xl px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500"
-                />
-                <button class="w-full px-4 py-2.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
-                  订阅
-                </button>
+                <input type="email" placeholder="输入邮箱地址" class="w-full bg-dark-700/50 border border-dark-600 rounded-xl px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500" />
+                <button class="w-full px-4 py-2.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">订阅</button>
               </div>
             </div>
           </div>
@@ -275,7 +320,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-dark-900 border-t border-dark-700 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -289,48 +333,30 @@
               <p class="text-xs text-gray-500">发现最好用的AI工具</p>
             </div>
           </div>
-          <p class="text-gray-400 text-sm max-w-md">
-            我们精选国内外优质AI工具，涵盖AI绘画、AI写作、AI编程等多个领域，帮助您发现最适合自己的AI工具。
-          </p>
+          <p class="text-gray-400 text-sm max-w-md">我们精选国内外优质AI工具，涵盖AI绘画、AI写作、AI编程等多个领域，帮助您发现最适合自己的AI工具。</p>
         </div>
-
         <div>
           <h4 class="text-white font-semibold mb-4">快速链接</h4>
           <ul class="space-y-2">
-            <li>
-              <a href="index-standalone.html#tools" class="text-gray-400 hover:text-white transition-colors text-sm">工具库</a>
-            </li>
-            <li>
-              <a href="index-standalone.html#categories" class="text-gray-400 hover:text-white transition-colors text-sm">分类浏览</a>
-            </li>
-            <li>
-              <a href="blog.html" class="text-gray-400 hover:text-white transition-colors text-sm">AI博客</a>
-            </li>
-            <li>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">提交工具</a>
-            </li>
+            <li><a href="index-standalone.html#tools" class="text-gray-400 hover:text-white transition-colors text-sm">工具库</a></li>
+            <li><a href="index-standalone.html#categories" class="text-gray-400 hover:text-white transition-colors text-sm">分类浏览</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors text-sm">AI博客</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="text-white font-semibold mb-4">联系我们</h4>
           <ul class="space-y-2">
             <li class="flex items-center gap-2">
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                <i class="fa-brands fa-github w-4 h-4"></i>
-              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github w-4 h-4"></i></a>
               <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">GitHub</a>
             </li>
             <li class="flex items-center gap-2">
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                <i class="fa-brands fa-twitter w-4 h-4"></i>
-              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter w-4 h-4"></i></a>
               <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Twitter</a>
             </li>
           </ul>
         </div>
       </div>
-
       <div class="border-t border-dark-700 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-gray-500 text-sm">© 2024 AI工具导航. All rights reserved.</p>
         <div class="flex items-center gap-6">
@@ -342,195 +368,13 @@
   </footer>
 
   <script>
-    const blogPosts = [
-      {
-        id: 'chatgpt-tips',
-        title: 'ChatGPT使用技巧：10个提升效率的提示词',
-        excerpt: '掌握这些提示词技巧，让ChatGPT成为您最强大的AI助手，提升工作和学习效率。',
-        category: 'tips',
-        categoryLabel: '实用技巧',
-        tags: ['ChatGPT', '提示词', '效率'],
-        date: '2024-01-15',
-        author: 'AI工具导航',
-        readTime: '8分钟',
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
-        url: 'blog/chatgpt-tips.html'
-      },
-      {
-        id: 'midjourney-guide',
-        title: 'MidJourney入门指南：从零开始创作AI艺术',
-        excerpt: '本指南将帮助您从零开始学习MidJourney，掌握AI绘画的基本技巧和创作思路。',
-        category: 'tutorial',
-        categoryLabel: '使用教程',
-        tags: ['MidJourney', 'AI绘画', '教程'],
-        date: '2024-01-12',
-        author: 'AI工具导航',
-        readTime: '12分钟',
-        image: 'https://images.unsplash.com/photo-1678836821375-41a51e0a5b57?w=600&h=400&fit=crop',
-        url: '#'
-      },
-      {
-        id: 'ai-code-tools',
-        title: 'AI编程工具推荐：提升开发效率的5个神器',
-        excerpt: '推荐5款最实用的AI编程工具，帮助开发者提升编码效率，减少重复劳动。',
-        category: 'review',
-        categoryLabel: '工具评测',
-        tags: ['AI编程', 'GitHub Copilot', '效率'],
-        date: '2024-01-10',
-        author: 'AI工具导航',
-        readTime: '6分钟',
-        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop',
-        url: '#'
-      },
-      {
-        id: 'ai-writing-tools',
-        title: 'AI写作工具对比：哪个最适合您？',
-        excerpt: '详细对比市面上主流AI写作工具，帮助您选择最适合自己的写作助手。',
-        category: 'review',
-        categoryLabel: '工具评测',
-        tags: ['AI写作', 'Grammarly', 'QuillBot'],
-        date: '2024-01-08',
-        author: 'AI工具导航',
-        readTime: '10分钟',
-        image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=400&fit=crop',
-        url: '#'
-      },
-      {
-        id: 'ai-video-tools',
-        title: 'AI视频生成工具推荐：Runway vs Pika',
-        excerpt: '对比两款热门AI视频生成工具，看看哪个更适合您的创作需求。',
-        category: 'review',
-        categoryLabel: '工具评测',
-        tags: ['AI视频', 'Runway', 'Pika'],
-        date: '2024-01-05',
-        author: 'AI工具导航',
-        readTime: '7分钟',
-        image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop',
-        url: '#'
-      },
-      {
-        id: 'ai-news-2024',
-        title: '2024年AI行业展望：值得关注的5大趋势',
-        excerpt: '展望2024年AI行业发展趋势，了解最新技术动态和投资方向。',
-        category: 'news',
-        categoryLabel: '行业动态',
-        tags: ['AI趋势', '2024', '行业分析'],
-        date: '2024-01-01',
-        author: 'AI工具导航',
-        readTime: '5分钟',
-        image: 'https://images.unsplash.com/photo-1677525793000-9a2541450365?w=600&h=400&fit=crop',
-        url: '#'
-      },
-    ];
-
-    function createBlogCard(post) {
-      return `
-        <article class="bg-dark-800 border border-dark-600 rounded-2xl overflow-hidden hover:border-accent-500/50 transition-all duration-300 group">
-          <div class="relative h-48 overflow-hidden">
-            <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute top-3 left-3">
-              <span class="px-3 py-1 bg-accent-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">${post.categoryLabel}</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-lg font-semibold text-white group-hover:text-accent-400 transition-colors mb-2">
-              <a href="${post.url}">${post.title}</a>
-            </h3>
-            <p class="text-gray-400 text-sm mb-4 line-clamp-2">${post.excerpt}</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${post.author}" alt="${post.author}" class="w-6 h-6 rounded-full bg-dark-600" />
-                <span class="text-sm text-gray-400">${post.author}</span>
-              </div>
-              <div class="flex items-center gap-3 text-xs text-gray-500">
-                <span>${post.date}</span>
-                <span>${post.readTime}</span>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-2 mt-3">
-              ${post.tags.map(tag => `<span class="px-2 py-0.5 bg-dark-700 text-gray-400 text-xs rounded-md">${tag}</span>`).join('')}
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    function renderBlogPosts(filteredPosts) {
-      const grid = document.getElementById('blogGrid');
-      if (filteredPosts.length > 0) {
-        grid.innerHTML = filteredPosts.map(createBlogCard).join('');
-      } else {
-        grid.innerHTML = `
-          <div class="col-span-full text-center py-16">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-dark-700 flex items-center justify-center">
-              <i class="fa-solid fa-search w-8 h-8 text-gray-500"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">未找到文章</h3>
-            <p class="text-gray-500">尝试更换搜索关键词或选择其他分类</p>
-          </div>
-        `;
-      }
-    }
-
-    let currentCategory = 'all';
-    let searchQuery = '';
-
-    function filterPosts() {
-      return blogPosts.filter(post => {
-        const matchesSearch = searchQuery === '' || 
-          post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-        const matchesCategory = currentCategory === 'all' || post.category === currentCategory;
-        return matchesSearch && matchesCategory;
-      });
-    }
-
-    function updateUI() {
-      const filtered = filterPosts();
-      renderBlogPosts(filtered);
-    }
-
-    document.querySelectorAll('.category-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.category-btn').forEach(b => {
-          b.classList.remove('bg-gradient-to-r', 'from-accent-500', 'to-accent-600', 'text-white');
-          b.classList.add('bg-dark-700', 'text-gray-400', 'hover:bg-dark-600', 'hover:text-white');
-        });
-        btn.classList.remove('bg-dark-700', 'text-gray-400', 'hover:bg-dark-600', 'hover:text-white');
-        btn.classList.add('bg-gradient-to-r', 'from-accent-500', 'to-accent-600', 'text-white');
-        currentCategory = btn.dataset.category;
-        updateUI();
-      });
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+      const icon = document.querySelector('#mobileMenuBtn i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-x');
     });
-
-    const searchInput = document.getElementById('searchInput');
-    const mobileSearchInput = document.getElementById('mobileSearchInput');
-
-    function handleSearch(e) {
-      searchQuery = e.target.value;
-      updateUI();
-    }
-
-    searchInput.addEventListener('input', handleSearch);
-    mobileSearchInput.addEventListener('input', handleSearch);
-
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = mobileMenuBtn.querySelector('i');
-      if (mobileMenu.classList.contains('hidden')) {
-        icon.classList.remove('fa-x');
-        icon.classList.add('fa-bars');
-      } else {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-x');
-      }
-    });
-
-    updateUI();
   </script>
 </body>
 </html>
